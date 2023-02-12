@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>DATN</Name>
+		<Assembly>DATN_CHUYEN_DE_REVITAPI.dll</Assembly>
+		<AddInId>00A3E188-D7A8-4411-A79E-7DB5DF36753B</AddInId>
+		<VisibilityMode>AlwaysVisible</VisibilityMode>
+		<FullClassName>DATN_CHUYEN_DE_REVITAPI.TrienKhaiCot.ExternalApplication</FullClassName>
+		<VendorId>THXD</VendorId>
+		<VendorDescription>Ho Sy Thang, www.THXD.net</VendorDescription>
+	</AddIn>
+</RevitAddIns>

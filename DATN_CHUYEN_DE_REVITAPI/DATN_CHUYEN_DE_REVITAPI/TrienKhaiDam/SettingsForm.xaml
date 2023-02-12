@@ -1,0 +1,230 @@
+﻿<UserControl x:Class="DATN_CHUYEN_DE_REVITAPI.SettingsForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DATN_CHUYEN_DE_REVITAPI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="0,0,0,0"  Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="THIẾT LẬP CHUNG"  materialDesign:ShadowAssist.ShadowDepth="Depth2"  
+                  Cursor="20" Foreground="Black" Grid.Column="0" Margin="2" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                
+
+                <Label Content="Chọn loại Tag thép đơn:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="156" Grid.Row="0" Margin="0,0.2,0,0"/>
+                <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="0"
+                          x:Name="cbSStandardRebar"/>
+
+                <Label Content="Chọn loại Tag thép đa:" HorizontalAlignment="Left" Width="156" Grid.Row="1" Margin="0,0.2,0,32.6"/>
+                <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="1"
+                          x:Name="cbMStandardRebar"/>
+
+                <Label Content="Chọn loại Tag thép đai:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="156" Grid.Row="2" Margin="0,0.4,0,0"/>
+                <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="2"
+                          x:Name="cbStirrupt"/>
+
+                <Label Content="Chọn loại DIM:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="101" Grid.Row="3"/>
+                <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="3"
+                          x:Name="cbDIMStyle"/>
+
+                <Label Content="Chọn loại Elevation:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="156" Grid.Row="4" Margin="0,0,0,0" />
+                <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="4"
+                          x:Name="cbElevationType"/>
+
+            </Grid>
+        </GroupBox>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="THIẾT LẬP MẶT CẮT NGANG" materialDesign:ShadowAssist.ShadowDepth="Depth2"  
+                  Cursor="20" Foreground="Black" Grid.Row="0" Margin="2" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Content="Chọn View Template:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="307"/>
+                    <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" x:Name="cbViewTemplateMCN"/>
+                </Grid>
+                
+            </GroupBox>
+
+            <GroupBox Header="THIẾT LẬP MẶT CẮT DỌC" materialDesign:ShadowAssist.ShadowDepth="Depth2"  
+                  Cursor="20" Foreground="Black" Grid.Row="1" Margin="2" Grid.RowSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Content="Chọn View Template:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="307"/>
+                    <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" x:Name="cbViewTemplate"/>
+
+                    <Label Content="Chọn View Type:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="101" Grid.Row="1"/>
+                    <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="1" x:Name="cbViewType"/>
+                </Grid>
+
+            </GroupBox>
+
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="THIẾT LẬP BẢN VẼ" materialDesign:ShadowAssist.ShadowDepth="Depth2"  
+                  Cursor="20" Foreground="Black" Grid.Row="0" Margin="2" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBox materialDesign:HintAssist.Hint="Tên Bảng Vẽ:"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             VerticalAlignment="Center"
+                             x:Name="txtSheetName"/>
+                    <Label Content="Chọn khổ giấy:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="101" Grid.Row="1"/>
+                    <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="1"
+                              x:Name="cbTitleblock"/>
+
+                    <Label Content="Chọn ghi chú:" HorizontalAlignment="Left"  
+                           VerticalAlignment="Top" Width="101" Grid.Row="2"/>
+                    <ComboBox materialDesign:HintAssist.Hint="OS" 
+                              Margin="0,5,0,0" Grid.Row="2"
+                              x:Name="cbLegends"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="THIẾT LẬP LỰA CHỌN" materialDesign:ShadowAssist.ShadowDepth="Depth2"  
+                  Cursor="20" Foreground="Black" Grid.Row="1" Margin="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}"
+                              IsChecked="True"
+                              Name="cbxDIM">
+                        Dim kích thước dầm ?
+                    </CheckBox>
+                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}"
+                              Grid.Row="1"
+                              IsChecked="True"
+                              Name="cbxTag">
+                        Tag các thành phần dầm ?
+                    </CheckBox>
+                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}"
+                              Grid.Row="2"
+                              IsChecked="True"
+                              Name="cbxNetCat">
+                        Vẽ nét cắt Sàn ?
+                    </CheckBox>
+                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}"
+                              Grid.Row="3"
+                              IsChecked="True"
+                              Name="cbxElevation">
+                        Vẽ Spot Elevation ?
+                    </CheckBox>
+                    <CheckBox Style="{StaticResource MaterialDesignCheckBox}"
+                              IsChecked="True"
+                              Grid.Row="4"
+                              Name="cbxSchedule">
+                        Thống kê thép dầm ?
+                    </CheckBox>
+                </Grid>
+            </GroupBox>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100"  Grid.Column="0"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                        x:Name="Ok" Click="Ok_Click" >
+                    _ĐỒNG Ý
+                </Button>
+
+                <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100" Grid.Column="1"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                        x:Name="Cancel" Click="Cancel_Click">
+                    _HỦY BỎ
+                </Button>
+            </Grid>
+
+        </Grid>
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>
